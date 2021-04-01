@@ -32,7 +32,13 @@ const Main = () => {
 	function getStepsContent(stepIndex) {
 		switch (stepIndex) {
 			case 0:
-				return <StepOne />;
+				return (
+					<StepOne
+						handleNext={handleNext}
+						activeStep={activeStep}
+						steps={steps}
+					/>
+				);
 			case 1:
 				return 'Step Two';
 			case 2:
@@ -57,9 +63,9 @@ const Main = () => {
 			) : (
 				<>
 					{getStepsContent(activeStep)}{' '}
-					<Button onClick={handleNext}>
+					{/* <Button onClick={handleNext}>
 						{activeStep === steps.length ? 'Finish' : 'Next'}
-					</Button>
+					</Button> */}
 				</>
 			)}
 		</div>
